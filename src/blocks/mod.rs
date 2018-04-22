@@ -19,6 +19,7 @@ pub mod backlight;
 mod weather;
 mod uptime;
 mod lib;
+mod maildir;
 
 use config::Config;
 use self::time::*;
@@ -31,6 +32,7 @@ use self::battery::*;
 use self::custom::*;
 use self::disk_space::*;
 use self::pacman::*;
+use self::maildir::*;
 use self::sound::*;
 use self::speedtest::*;
 use self::toggle::*;
@@ -84,6 +86,7 @@ pub fn create_block(name: &str, block_config: Value, config: Config, tx_update_r
             "custom" => Custom,
             "disk_space" => DiskSpace,
             "toggle" => Toggle,
+            "maildir" => Maildir,
             "sound" => Sound,
             "speedtest" => SpeedTest,
             "temperature" => Temperature,
